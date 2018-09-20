@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Календарь событий</title>
+	<link rel="stylesheet" href="css/eventCalendar.css">
+	<link rel="stylesheet" href="css/eventCalendar_theme_responsive.css">
+</head>
+<body>
+
+	<div id="eventCalendar" style="width: 800px; margin: 50px auto;"></div>
+	
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/jquery.eventCalendar.js"></script>
+	<script>
+	$(function(){
+		var data = [
+			{ "date": "2018-09-03 09:00:00", "title": " 3 -7 September 2018. ASIAN CARRIERS CONFERENCE", "description": "Cebu Cit", "url": "#s1" },
+			{ "date": "2018-09-11 09:00:00", "title": "CARRIERS WORLD 2018", "description": "London", "url": "https://www.cambridgeconsultants.com/events/carriers-world-2018" },
+			{ "date": "2018-09-17 09:00:00", "title": "TELECOMS WORLD MIDDLE EAST", "description": "Dubai", "url": "http://www.terrapinn.com/conference/telecoms-world-middle-east/agenda.stm"},
+			{ "date": "2018-09-19 09:00:00", "title": "WHOLESALE CONGRESS SERIES", "description": "Madrid", "url": "http://www.wholesalecongress.com/"},
+			{ "date": "2018-10-08 09:00:00", "title": "WORLD TELEMEDIA", "description": "Marbella", "url": "https://www.wtevent.co.uk/visiting/register/"},
+			{ "date": "2018-10-09 09:00:00", "title": "VOICE & ADVANCED COMMUNICATIONS SUMMIT", "description": "Amsterdam", "url": "https://tmt.knect365.com/voice-advanced-communications-summit/"},
+			{ "date": "2018-10-23 09:00:00", "title": "CAPACITY EUROPE 2018", "description": "London", "url": "https://www.capacitymedia.com/"},
+			{ "date": "2018-10-30 09:00:00", "title": "TOTAL TELECOM CONGRESS", "description": "London", "url": "https://www.totaltele.com/"},
+			{ "date": "2018-11-11 09:00:00", "title": "GCCM AFRICA 2018", "description": "Cape Town", "url": "https://10times.com/africa-gccm"},
+			{ "date": "2018-11-13 09:00:00", "title": "AFRICACOM", "description": "Cape Town", "url": "https://www.eventseye.com/fairs/f-africa-com-7375-1.html"},
+			{ "date": "2018-12-05 09:00:00", "title": "CAPPACITY ASIA 2018", "description": "Hong Kong", "url": "https://www.neventum.com/tradeshows/capacity-asia"}
+		];
+		$('#eventCalendar').eventCalendar({
+			jsonData: data,
+			eventsjson: 'data.json',
+			jsonDateFormat: 'human',
+			startWeekOnMonday: false,
+			openEventInNewWindow: false,
+			dateFormat: 'DD-MM-YYYY',
+			showDescription: false,
+			locales: {
+				locale: "en",
+				txt_noEvents: "No any events",
+				txt_SpecificEvents_prev: "",
+				txt_SpecificEvents_after: "envents:",
+				txt_NextEvents: "Next events:",
+				txt_GoToEventUrl: "Watch",
+				moment: {
+					"months" : [ "January", "February", "March", "April", "May", "June",
+					"July", "August", "September", "October", "November", "December" ],
+					"monthsShort" : [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+					"Jul", "Aug", "Sep", "Oct", "Nov", "Decк" ],
+					"weekdays" : [ "Sunday", "Monday","Tuesday","Wednesday","Thursday",
+					"Friday","Saturday" ],
+					"weekdaysShort" : [ "Sun","Mon","Tue","Wen","Thu",
+					"Fri","Sat" ],
+					"weekdaysMin" : [ "Su","Mo","Tu","We","Th",
+					"Fr","Sa" ]
+				}
+			}
+		});
+	});
+	</script>
+</body>
+</html>
